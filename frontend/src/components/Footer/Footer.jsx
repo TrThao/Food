@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Footer.css";
-import { assets } from "../../../assets/assets";
+import { assets } from "../../assets/assets";
 
 const Footer = () => {
   useEffect(() => {
