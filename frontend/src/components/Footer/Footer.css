@@ -1,0 +1,83 @@
+.footer {
+    color: #d9d9d9;
+    background-color: #323232;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 8vw;
+    padding-top: 80px;
+}
+
+.footer-content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cột đều nhau */
+    gap: 40px; /* Điều chỉnh khoảng cách giữa các cột */
+}
+
+.footer-content-left p {
+    word-wrap: break-word; /* Tự động ngắt từ khi quá dài */
+    word-break: break-all; /* Ngắt từ nếu cần */
+    white-space: normal; /* Đảm bảo xuống dòng bình thường */
+}
+
+.footer-social-icons {
+    display: flex; /* Để các icon nằm ngang */
+    gap: 15px; /* Khoảng cách giữa các icon */
+}
+
+.footer-social-icons img {
+    width: 30px; /* Điều chỉnh kích thước icon */
+    height: 30px; /* Đảm bảo icon có kích thước đồng nhất */
+    object-fit: contain; /* Đảm bảo hình ảnh được hiển thị đầy đủ trong khung */
+}
+
+.footer-content-left, .footer-content-right, .footer-content-center, .footer-map {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.footer-content-left li, .footer-content-right li, .footer-content-center li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.footer-content-right h2, .footer-content-center h2, .footer-map h2 {
+    color: white;
+}
+
+.footer hr {
+    width: 100%;
+    border-color: #d9d9d9;
+    margin-top: 20px;
+}
+
+.footer-copyrigt {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #d9d9d9;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+}
+
+#map {
+    width: 100%;
+    height: 200px; /* Điều chỉnh chiều cao bản đồ */
+    border: 1px solid #d9d9d9;
+    margin-top: 10px;
+}
+@media (max-width:1050px){
+    .footer-content{
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+    }
+    .footer-content-right{
+        text-align: center;
+    }
+}
