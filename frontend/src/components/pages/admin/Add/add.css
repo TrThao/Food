@@ -1,0 +1,103 @@
+/* Đặt kích thước và kiểu dáng cơ bản cho trang Add */
+.add {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Định dạng cho các phần của form */
+  .flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Định dạng cho các phần upload ảnh */
+  .add-img-upload {
+    text-align: center;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .add-img-upload p {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .add-img-upload label img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .add-img-upload input[type='file'] {
+    display: none;
+  }
+  
+  /* Định dạng cho các trường nhập liệu */
+  .add-product-name input,
+  .add-product-description textarea,
+  .add-category-price select,
+  .add-price input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+  }
+  
+  /* Định dạng cho các phần sản phẩm và mô tả */
+  .add-product-name,
+  .add-product-description {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-product-description textarea {
+    resize: vertical;
+  }
+  
+  /* Định dạng cho phần lựa chọn danh mục và giá */
+  .add-category-price {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .add-category,
+  .add-price {
+    flex: 1;
+  }
+  
+  .add-category select,
+  .add-price input {
+    width: 100%;
+  }
+  
+  /* Định dạng cho nút thêm sản phẩm */
+  .add-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .add-btn:focus {
+    outline: none;
+  }
+  

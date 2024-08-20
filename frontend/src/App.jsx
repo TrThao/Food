@@ -1,26 +1,25 @@
 import React, { useState } from "react";
-import Navbar from "./components/Navbar/Navbar";
-import { Route, Routes } from "react-router-dom";
-import Home from "./components/pages/web/Home/Home"
-import Cart from "./components/pages/web/Cart/Cart";
-import PlaceOrder from "./components/pages/web/PlaceOrder/PlaceOrder";
-import Footer from "./components/Footer/Footer";
+import { useLocation } from "react-router-dom";
+import WebLayout from "./layouts/weblayout";
+import AdminLayout from "./layouts/Adminlayout";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
+
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
+  const location = useLocation();
+
+  const isAdminRoute = location.pathname.startsWith("/admin");
+
   return (
     <>
-    {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
-      <div className="app">
-        <Navbar setShowLogin={setShowLogin} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/order" element={<PlaceOrder />} />
-        </Routes>
-      </div>
-      <Footer />
+      {showLogin && <LoginPopup setShowLogin={setShowLogin} />}
+
+      {isAdminRoute ? (
+        <AdminLayout></AdminLayout>
+      ) : (
+        <WebLayout setShowLogin={setShowLogin}></WebLayout>
+      )}
     </>
   );
 };
