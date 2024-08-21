@@ -45,7 +45,6 @@ hr{
 
 .admin-content {
   flex: 1;
-  padding: 20px;
   background-color: #fff; /* Ví dụ về màu nền */
   overflow-y: auto; /* Đảm bảo cuộn nếu nội dung quá dài */
 }

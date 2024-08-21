@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./add.css";
 import { assets } from "../../../assets/admin/assets";
 import axios from "axios";
-import {  toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from 'react-toastify';
+
 
 const Add = () => {
   const [image, setImage] = useState(false);
@@ -40,13 +40,13 @@ const Add = () => {
           category: "Salad",
         });
         setImage(false);
-        toast.success("Food added successfully!");  
+        toast.success("Thêm món ăn thành công");  
       } else {
-        toast.error("Failed to add food."); 
+        toast.error("Xảy ra lỗi "); 
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      toast.error("An error occurred while adding the food.");  
+      toast.error("Đã xảy ra lỗi khi thêm thực phẩm.");  
     }
   };
   return (
