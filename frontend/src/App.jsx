@@ -1,25 +1,20 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
-import WebLayout from "./layouts/weblayout";
-import AdminLayout from "./layouts/Adminlayout";
-import LoginPopup from "./components/LoginPopup/LoginPopup";
-
+import { Route, Routes } from "react-router-dom";
+import RoutesConfig from "./routes";
 
 const App = () => {
-  const [showLogin, setShowLogin] = useState(false);
-  const location = useLocation();
-
-  const isAdminRoute = location.pathname.startsWith("/admin");
-
   return (
     <>
-      {showLogin && <LoginPopup setShowLogin={setShowLogin} />}
-
-      {isAdminRoute ? (
-        <AdminLayout></AdminLayout>
-      ) : (
-        <WebLayout setShowLogin={setShowLogin}></WebLayout>
-      )}
+      <Routes>
+        {RoutesConfig.map((route, index) => (
+          <Route key={index} path={route.path} element={route.element}>
+            {route.children &&
+              route.children.map((child, childIndex) => (
+                <Route key={childIndex} path={child.path} element={child.element} />
+              ))}
+          </Route>
+        ))}
+      </Routes>
     </>
   );
 };

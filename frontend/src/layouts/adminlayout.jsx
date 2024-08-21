@@ -1,21 +1,17 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import RoutesConfig from '../routes/index';
-import NavAdmin from '../components/NavAdmin/NavAdmin';
-
+import NavAdmin from '../components/NavAdmin/navAdmin';
+import Sidebar from '../components/Sidebar/Sidebar';
+import { Outlet } from 'react-router-dom';
+import '../index.css'; 
 const AdminLayout = () => {
   return (
-    <div>
-      <div className="app-content">
-          <Routes>
-            {RoutesConfig.filter(route => route.path.startsWith('/admin')).map((route, index) => (
-              <Route key={index} path={route.path} element={route.element}>
-                {route.children && route.children.map((child, childIndex) => (
-                  <Route key={childIndex} path={child.path} element={child.element} />
-                ))}
-              </Route>
-            ))}
-          </Routes>
+    <div className="admin-layout">
+      <NavAdmin />
+      <div className="admin-content-wrapper">
+        <Sidebar />
+        <div className="admin-content">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

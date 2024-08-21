@@ -31,3 +31,21 @@ hr{
   height:1px;
   background-color:#a9a9a9;
 }
+/* AdminLayout.css */
+.admin-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.admin-content-wrapper {
+  display: flex;
+  flex: 1;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff; /* Ví dụ về màu nền */
+  overflow-y: auto; /* Đảm bảo cuộn nếu nội dung quá dài */
+}

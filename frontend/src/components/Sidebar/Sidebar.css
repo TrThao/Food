@@ -1,9 +1,10 @@
-.sidebar{
+.sidebar {
     width: 18%;
-    min-height: 100vh;
-    border: 1.5px solid #a9a9a9;
-    font-size: max(1vw,10px);
-}
+    min-height: calc(100vh - 50px);
+    border-right: 1.5px solid #a9a9a9;
+    font-size: max(1vw, 10px);
+    background-color: #f5f5f5;
+  }
 .sidebar-options{
     padding-top: 50px;
     padding-left: 20%;

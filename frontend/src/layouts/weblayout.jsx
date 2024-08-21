@@ -1,19 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
-import { Routes, Route } from 'react-router-dom';
-import RoutesConfig from "../routes/index";
+import { Outlet } from 'react-router-dom';
+import LoginPopup from "../components/LoginPopup/LoginPopup";
 
-const WebLayout = ({ setShowLogin }) => {
+const WebLayout = () => {
+  const [showLogin, setShowLogin] = useState(false);
   return (
     <>
+     {showLogin && <LoginPopup setShowLogin={setShowLogin} />}
       <Navbar setShowLogin={setShowLogin} />
       <div className="app">
-        <Routes>
-          {RoutesConfig.map((route, index) => (
-            <Route key={index} path={route.path} element={route.element} />
-          ))}
-        </Routes>
+        <Outlet />
       </div>
       <Footer />
     </>
